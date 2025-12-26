@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import productsData from "../data/products";
-import "./productscard.css";
+import "./ProductsCard.css";
 
 const Products = () => {
   const [search, setSearch] = useState("");
