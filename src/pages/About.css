@@ -1,0 +1,151 @@
+/* Page Base */
+.about-page {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.about-hero {
+  height: 60vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  animation: fadeDown 1s ease forwards;
+}
+
+.about-hero-content {
+  color: #fff;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.about-hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.about-hero-content p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Content Section */
+.about-content {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Cards */
+.about-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #e5e5e5;
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeUp 1.3s ease forwards;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.about-card h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.about-card p {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Values Section */
+.about-values {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.about-values h2 {
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.values-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.value-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.value-card h4 {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Why Choose Us */
+.about-choose {
+  padding: 50px 20px;
+}
+
+.about-choose ul {
+  margin-top: 15px;
+  padding-left: 20px;
+  color: #6c757d;
+}
+
+.about-choose li {
+  margin-bottom: 8px;
+}

@@ -1,0 +1,154 @@
+/* Base */
+.contact-page {
+  min-height: 100vh;
+}
+
+/* Hero */
+.contact-hero {
+  height: 50vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  animation: fadeDown 1s ease forwards;
+}
+
+.contact-hero-content {
+  color: #fff;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.contact-hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.contact-hero-content p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* Container */
+.contact-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+/* Info Section */
+.contact-info {
+  animation: fadeUp 1.3s ease forwards;
+}
+
+.contact-info h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  color: #6c757d;
+  margin-bottom: 15px;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* Form Card */
+.contact-form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+
+  animation: fadeUp 1.4s ease forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.contact-form:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.contact-form h2 {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Inputs */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0d6efd;
+}
+
+/* Button */
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0d6efd;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.4);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
