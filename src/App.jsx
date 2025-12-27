@@ -34,16 +34,27 @@ import Reports from "./pages/Reports";
 /* Layouts */
 // import AdminLayout from "./admin/AdminLayout"; // If you have a separate layout
 
+/* User Dashboard */
+import UserDashboard from "./dashboards/UserDashboard";
+
+import { CartProvider } from "./context/CartContext.jsx";
+
 function App() {
   return (
     <Routes>
 
       {/* ===== PUBLIC ROUTES WITH NAVBAR + FOOTER ===== */}
-      <Route element={<MainLayout />}>
+      <Route element={
+        <DataProvider>
+          <CartProvider>
+            <MainLayout />
+          </CartProvider>
+        </DataProvider>
+      }>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        {/* <Route path="/admindashboard" element={<AdminDashboard />} /> */}
+        <Route path="/dashboard" element={<UserDashboard />} /> {/* User Dashboard Route */}
         <Route path="/productscard" element={<Products />} />
       </Route>
 

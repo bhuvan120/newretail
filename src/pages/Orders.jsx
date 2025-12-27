@@ -3,7 +3,7 @@ import { useData } from '../context/DataContext';
 import { format, parseISO } from 'date-fns';
 
 const Orders = () => {
-    const { orders, loading } = useData();
+    const { orders, loading, dataStatus } = useData();
     const [page, setPage] = useState(1);
     const LIMIT = 20;
 
@@ -15,6 +15,15 @@ const Orders = () => {
 
     return (
         <div className="space-y-6 fade-in pb-10">
+            {/* Loading Indicator for Full Data */}
+            {(dataStatus === 'initial_loaded' || dataStatus === 'loading_full') && (
+                <div className="bg-blue-50 border border-blue-100 text-blue-700 px-4 py-3 rounded-xl flex items-center justify-between animate-pulse">
+                    <div className="flex items-center gap-2">
+                        <div className="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+                        <span className="font-medium text-sm">Showing preview data. Loading full history in background...</span>
+                    </div>
+                </div>
+            )}
             <header>
                 <h2 className="text-2xl font-bold text-slate-900">Orders</h2>
                 <p className="text-slate-500">{orders.length} total orders found.</p>
@@ -41,9 +50,9 @@ const Orders = () => {
                                 <td className="px-6 py-4 text-slate-500">{o.customer_id}</td>
                                 <td className="px-6 py-4">
                                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${o.order_status === 'Delivered' ? 'bg-emerald-100 text-emerald-700' :
-                                            o.order_status === 'Cancelled' ? 'bg-red-100 text-red-700' :
-                                                o.order_status === 'Shipped' ? 'bg-blue-100 text-blue-700' :
-                                                    'bg-amber-100 text-amber-700'
+                                        o.order_status === 'Cancelled' ? 'bg-red-100 text-red-700' :
+                                            o.order_status === 'Shipped' ? 'bg-blue-100 text-blue-700' :
+                                                'bg-amber-100 text-amber-700'
                                         }`}>
                                         {o.order_status}
                                     </span>

@@ -29,7 +29,7 @@ const Login = () => {
       if (email === "harigudipati666@gmail.com") {
         navigate("/admin");
       } else {
-        navigate("/dashboard");
+        navigate("/");
       }
     } catch (err) {
       setError(err.message || "Invalid email or password");
@@ -47,7 +47,7 @@ const Login = () => {
       if (userEmail === "harigudipati666@gmail.com") {
         navigate("/admin");
       } else {
-        navigate("/dashboard");
+        navigate("/");
       }
     } catch (err) {
       setError(err.message || "Google login failed");

@@ -7,7 +7,7 @@ import { Clock, Truck, RotateCcw } from 'lucide-react';
 import { differenceInDays, parseISO, format } from 'date-fns';
 
 const Returns = () => {
-    const { returns, loading } = useData();
+    const { returns, loading, dataStatus } = useData();
 
     const analytics = useMemo(() => {
         if (loading) return null;
@@ -57,6 +57,15 @@ const Returns = () => {
 
     return (
         <div className="space-y-8 fade-in pb-10">
+            {/* Loading Indicator for Full Data */}
+            {(dataStatus === 'initial_loaded' || dataStatus === 'loading_full') && (
+                <div className="bg-blue-50 border border-blue-100 text-blue-700 px-4 py-3 rounded-xl flex items-center justify-between animate-pulse">
+                    <div className="flex items-center gap-2">
+                        <div className="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+                        <span className="font-medium text-sm">Showing preview data. Loading full history in background...</span>
+                    </div>
+                </div>
+            )}
             <header>
                 <h2 className="text-2xl font-bold text-slate-900">Returns Analytics</h2>
                 <p className="text-slate-500">Analyze return rates, processing times, and logistics efficiency.</p>

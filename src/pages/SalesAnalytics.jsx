@@ -7,7 +7,7 @@ import {
 import { Download } from 'lucide-react';
 
 const SalesAnalytics = () => {
-    const { orders, orderItems, products: filteredProducts, loading } = useFilteredData();
+    const { orders, orderItems, products: filteredProducts, loading, dataStatus } = useFilteredData();
 
     const { trendData, categoryData, brandData, deptData } = useMemo(() => {
         if (loading) return { trendData: [], categoryData: [], brandData: [], deptData: [] };
@@ -60,6 +60,15 @@ const SalesAnalytics = () => {
 
     return (
         <div className="space-y-8 fade-in pb-10">
+            {/* Loading Indicator for Full Data */}
+            {(dataStatus === 'initial_loaded' || dataStatus === 'loading_full') && (
+                <div className="bg-blue-50 border border-blue-100 text-blue-700 px-4 py-3 rounded-xl flex items-center justify-between animate-pulse">
+                    <div className="flex items-center gap-2">
+                        <div className="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+                        <span className="font-medium text-sm">Showing preview data. Loading full history in background...</span>
+                    </div>
+                </div>
+            )}
             <header className="flex justify-between items-end">
                 <div>
                     <h2 className="text-2xl font-bold text-slate-900">Sales & Revenue Analytics</h2>

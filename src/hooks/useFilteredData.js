@@ -3,7 +3,7 @@ import { useData } from '../context/DataContext';
 import { useFilters } from '../context/FilterContext';
 
 export const useFilteredData = () => {
-    const { products, orders, returns, orderItems, loading } = useData();
+    const { products, orders, returns, orderItems, loading, dataStatus } = useData();
     const { filters } = useFilters();
 
     return useMemo(() => {
@@ -51,7 +51,8 @@ export const useFilteredData = () => {
             orders: filteredOrders,
             returns, // We could filter returns by date too if needed
             orderItems: filteredItems,
-            loading: false
+            loading: false,
+            dataStatus
         };
-    }, [products, orders, returns, orderItems, filters, loading]);
+    }, [products, orders, returns, orderItems, filters, loading, dataStatus]);
 };

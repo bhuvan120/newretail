@@ -5,13 +5,14 @@ import { getFirestore } from "firebase/firestore";
 
 // 🔹 Your Firebase config using Environment Variables
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_API_KEY,
-  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_APP_ID
+  apiKey: "AIzaSyDlfkXCU7Ndt6pB_s36_BisFogfdKCr-R8",
+  authDomain: "vajra-retail.firebaseapp.com",
+  projectId: "vajra-retail",
+  storageBucket: "vajra-retail.firebasestorage.app",
+  messagingSenderId: "841688994224",
+  appId: "1:841688994224:web:e3f8c29d4b924476a94675"
 };
+
 
 // 🔹 Initialize Firebase
 const app = initializeApp(firebaseConfig);
